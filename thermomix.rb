@@ -33,7 +33,7 @@ class Magazine
   end
 
   def jpg_to_pdf(destination)
-    files = Dir[path + "*.jpg"].join(' ')
+    files = Dir[path + "*.jpg"].sort.join(' ')
     system("convert #{files} #{destination}/#{id}.pdf")
   end
 
